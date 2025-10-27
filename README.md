@@ -4,118 +4,97 @@ A modern, professional event management system built with React frontend and Fla
 
 ## 🚀 Features
 
-### Admin Portal
-- **Dashboard**: Real-time statistics and overview
-- **Event Management**: Create, edit, delete events with rich details
-- **Registration Tracking**: View all registrations with payment status
-- **Revenue Analytics**: Track earnings from paid events
-- **Event Categories**: Organize events by type (Technology, Cultural, Career, etc.)
+# KS Events
 
-### Student Portal
-- **Event Browsing**: View all available events with filtering
-- **Registration System**: Easy event registration with payment processing
-- **Registration Management**: View and cancel registrations
-- **Payment Integration**: Simulated payment gateway for paid events
-- **Student Profiles**: Multiple student accounts for testing
+KS Events is a full-stack event management application built for institutions and communities to create, publish, and manage events. It includes an Admin portal for event organizers, a Student portal for attendees to browse and register, and a public-facing site for discovery.
 
-### Public Interface
-- **Event Discovery**: Beautiful public-facing event showcase
-- **Search & Filter**: Find events by category or keyword
-- **Responsive Design**: Works on all devices
-- **Professional UI**: Modern dark theme with smooth animations
+## Key Highlights
 
-## 🛠️ Technology Stack
+- Admin portal with event CRUD, registration tracking and revenue reporting
+- Student portal for browsing events, registering, and managing registrations
+- Public interface for event discovery with search and category filters
+- Simulated payment flow for paid events (can be swapped for a real gateway)
+- Built with React (Vite) frontend and Flask backend with SQLAlchemy
 
-### Backend
-- **Flask**: Python web framework
-- **Flask-CORS**: Cross-origin resource sharing
-- **PostgreSQL**: Production-ready database with SQLAlchemy ORM
-- **SQLAlchemy**: Database ORM for Python
+## Features
 
-### Frontend
-- **React 18**: Modern React with hooks
-- **React Router**: Client-side routing
-- **Vite**: Fast build tool and dev server
-- **CSS3**: Custom styling with CSS variables and modern features
+- Dashboard and analytics for admins
+- Event categories, detailed event pages, and media/image support
+- Registration management with payment status
+- Responsive UI and modern design
 
-## 📦 Installation & Setup
+## Technology Stack
 
-### Prerequisites
-- Node.js 16+ and npm
-- Python 3.8+
-- Git
+- Frontend: React 18, Vite, React Router
+- Backend: Flask, Flask-CORS, SQLAlchemy
+- Database: PostgreSQL (development can use SQLite)
+- Dev tooling: Node.js, npm, Python 3.8+
 
-### Backend Setup
+## Quickstart (Development)
 
-1. **Navigate to backend directory:**
-   ```bash
-   cd backend-flask
-   ```
+Follow these steps to run the project locally.
 
-2. **Create virtual environment:**
-   ```bash
-   python -m venv venv
-   ```
+1) Clone the repository (if you haven't already):
 
-3. **Activate virtual environment:**
-   - Windows: `venv\Scripts\activate`
-   - macOS/Linux: `source venv/bin/activate`
+```powershell
+git clone https://github.com/KamalSai3/KS_Events.git
+cd "KS-Events"
+```
 
-4. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+2) Backend setup
 
-5. **Database Setup:**
-   The application is configured to use a PostgreSQL database. The connection string is set in `config.py`.
-   
-   To initialize the database with sample data:
-   ```bash
-   python init_db.py
-   ```
+```powershell
+cd backend-flask
+python -m venv venv
+venv\Scripts\activate   # Windows
+pip install -r requirements.txt
+# Configure DB connection in config.py (default uses PostgreSQL)
+python init_db.py        # create or initialize the database
+python app.py            # or: flask run
+```
 
-6. **Run the Flask server:**
-   ```bash
-   python app.py
-   ```
-   The backend will be available at `http://localhost:5000`
+The backend will run at: http://localhost:5000
 
-### Frontend Setup
+3) Frontend setup (in a separate terminal)
 
-1. **Navigate to frontend directory:**
-   ```bash
-   cd frontend
-   ```
+```powershell
+cd frontend
+npm install
+npm run dev
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+The frontend dev server will run at: http://localhost:5173
 
-3. **Start development server:**
-   ```bash
-   npm run dev
-   ```
-   The frontend will be available at `http://localhost:5173`
+## Configuration
 
-## 🎯 Usage Guide
+- Backend settings are in `backend-flask/config.py` (database URL, CORS, secrets).
+- To switch databases, update the SQLALCHEMY_DATABASE_URI.
 
-### Admin Portal (`/admin`)
-1. **Dashboard**: View system overview, total events, registrations, and revenue
-2. **Events**: Create new events with detailed information
-   - Title, description, date, time, location
-   - Capacity, pricing, categories, tags
-   - Image URLs, organizer details
-3. **Registrations**: Monitor all student registrations and payment status
+## Deployment Notes
 
-### Student Portal (`/student`)
-1. **Browse Events**: View available events with real-time availability
-2. **Register**: Select events and complete registration
-3. **Payment**: Simulated payment processing for paid events
-4. **Manage Registrations**: View and cancel existing registrations
+- Use PostgreSQL in production and set proper environment variables for DB credentials.
+- Consider using a real payment gateway (Stripe/PayPal) instead of the simulated payment flow.
+- Containerize with Docker for easier deployment.
 
-### Public Events (`/`)
-- Browse all active events
+## Contributing
+
+Contributions are welcome. Recommended workflow:
+
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feat/your-feature`
+3. Commit changes and open a pull request
+
+Please include tests for new features where appropriate.
+
+## License
+
+This project is provided under the MIT License. Update `LICENSE` file as needed.
+
+## Contact
+
+Owner: Kamal Sai — https://github.com/KamalSai3
+
+If you'd like, I can also commit this README change and push it to `origin/main`. Reply "push" and I'll finish the commit & push step for you.
 - Search and filter by category
 - View event details and pricing
 
